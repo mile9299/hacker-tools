@@ -292,4 +292,4 @@ Enter the options and continue.
 
 #### Don't Forgot to share with Your Friends 
 ### The new Update get will soon stay updated
-#### Thank you..!!
+#### Thank you..!! BEST FOR YOU!!
