@@ -209,9 +209,7 @@
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A2.png)
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A4.png)
 
-## Installation For Linux <img src="https://konpa.github.io/devicon/devicon.git/icons/linux/linux-original.svg" alt="linux" width="25" height="25"/></p><p align="center">
-
-
+### Installation For Linux <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Tux-flat.svg" alt="linux" width="30" height="30"/></p><p align="center">
 ### !! RUN HACKINGTOOL AS ROOT !! 
 
 
