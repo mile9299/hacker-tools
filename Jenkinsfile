@@ -2,20 +2,20 @@ pipeline {
     agent any
     
     environment {
-        JUICE_SHOP_REPO = 'https://github.com/mile9299/spooky.git'
+        HACKING_TOOLS_REPO = 'https://github.com/mile9299/hacker-tools.git
         DOCKER_PORT = 3000 // Default Docker port
         SPECTRAL_DSN = credentials('SPECTRAL_DSN')
     }
     // Added
-    tools {
-        nodejs 'NodeJS 18.0.0'
-    }
+  //  tools {
+    //    nodejs 'NodeJS 18.0.0'
+    //}
 /// Added
     stages {
         stage('Checkout') {
             steps {
                 script {
-                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: JUICE_SHOP_REPO]]])
+                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: HACKING_TOOLS_REPO]])
                 }
             }
         }
@@ -48,7 +48,7 @@ pipeline {
         stage('Falcon Cloud Security') {
               steps {
                 withCredentials([usernameColonPassword(credentialsId: 'CRWD', variable: '')]) {
-                crowdStrikeSecurity imageName: 'mile9299/hackingtools', imageTag: 'latest', enforce: true, timeout: 60
+                crowdStrikeSecurity imageName: 'hackingtools', imageTag: 'latest', enforce: true, timeout: 60
             }
           }
         }
@@ -56,11 +56,11 @@ pipeline {
             steps {
                 script {
                     echo 'Deploying application...'
-                    sh 'docker stop spooky || true'
+                    sh 'docker stop hackingtools || true'
                     sh 'docker rm spooky || true'
-                    def containerId = sh(script: "docker run -d -P --name spooky spooky", returnStdout: true).trim()
+                    def containerId = sh(script: "docker run -d -P --name hackingtools hackingtools", returnStdout: true).trim()
                     def dockerHostPort = sh(script: "docker port ${containerId} ${DOCKER_PORT} | cut -d ':' -f 2", returnStdout: true).trim()
-                    echo "Spooky is running on http://localhost:${dockerHostPort}"
+                    echo "Hacking Tools are running on http://localhost:${dockerHostPort}"
                 }
             }
         }
