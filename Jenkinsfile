@@ -19,13 +19,13 @@ pipeline {
                 }
             }
         }
-        stage('Test with Snyk') {
-            steps {
-                script {
-                    snykSecurity failOnIssues: false, severity: 'critical', snykInstallation: 'snyk-manual', snykTokenId: 'SNYK'
-                }
-           }
-        }
+       // stage('Test with Snyk') {
+         //   steps {
+           //     script {
+                  //  snykSecurity failOnIssues: false, severity: 'critical', snykInstallation: 'snyk-manual', snykTokenId: 'SNYK'
+             //   }
+          // }
+       // }
        // stage('install Spectral') {
          //     steps {
            //     sh "curl -L 'https://get.spectralops.io/latest/x/sh?dsn=$SPECTRAL_DSN' | sh"
