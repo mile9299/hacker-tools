@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        HACKING_TOOLS_REPO = 'https://github.com/mile9299/hacker-tools.git
+        HACKING_TOOLS_REPO = 'https://github.com/mile9299/hacker-tools.git'
         DOCKER_PORT = 3000 // Default Docker port
         SPECTRAL_DSN = credentials('SPECTRAL_DSN')
     }
