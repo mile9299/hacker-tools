@@ -7,9 +7,9 @@ pipeline {
         SPECTRAL_DSN = credentials('SPECTRAL_DSN')
     }
     // Added
-  //  tools {
-    //    nodejs 'NodeJS 18.0.0'
-    //}
+    tools {
+        nodejs 'NodeJS 18.0.0'
+    }
 /// Added
     stages {
         stage('Checkout') {
