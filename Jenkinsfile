@@ -15,7 +15,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: HACKING_TOOLS_REPO]])
+                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: HACKING_TOOLS_REPO]]])
                 }
             }
         }
