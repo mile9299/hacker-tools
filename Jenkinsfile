@@ -57,7 +57,7 @@ pipeline {
                 script {
                     echo 'Deploying application...'
                     sh 'docker stop hackingtools || true'
-                    sh 'docker rm spooky || true'
+                    sh 'docker rm hackingtools || true'
                     def containerId = sh(script: "docker run -d -P --name hackingtools hackingtools", returnStdout: true).trim()
                     def dockerHostPort = sh(script: "docker port ${containerId} ${DOCKER_PORT} | cut -d ':' -f 2", returnStdout: true).trim()
                     echo "Hacking Tools are running on http://localhost:${dockerHostPort}"
